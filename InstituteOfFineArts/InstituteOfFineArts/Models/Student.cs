@@ -11,7 +11,8 @@ namespace InstituteOfFineArts.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,12 +22,17 @@ namespace InstituteOfFineArts.Models
         }
     
         public int ID { get; set; }
+
+        [Required]
+        [Display(Name = "User name")]
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public string Class { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> Birthday { get; set; }
         public string Address { get; set; }
     
